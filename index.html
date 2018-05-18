@@ -1,0 +1,57 @@
+    <!DOCTYPE html>
+    <html ng-app="app">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Angular Lab 1</title>
+        <link href="style.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    </head>
+    <body>
+    <div id="box"> 
+        <div id="innerbox">
+            <h1>TODO List</h1>
+            <p>A place to store the things you have to do!</p>
+
+            <input type="text" placeholder="Filter your to dos" class="topInput"></input>
+
+            <!--repeated things-->
+            <div ng-controller="SampleToDo as ctrl">
+                <p ng-repeat="ToDoS in ctrl.ToDoList">{{ToDoList.task}} and {{ToDoList.completed}}</p>
+            </div>
+            
+            <!-- <select ng-model="tasks">
+                <option value="make_dinner">make dinner</option>
+                <option value="go_for_a_run">go for a run</option>
+                <option value="bake_a_cake">bake a cake</option>
+                <option value="the_the_mail">get the mail</option> -->
+
+            </select>
+
+            <!--ngClass completed-->
+            <div ng-class="completed">
+                <button class="btn"><i class="fa fa-close"></i></button>
+                <p id="check">completed</p>
+            </div>
+
+            <!--ngif delelted-->
+            <input type="checkbox" ng-model="completed" ng-init="completed = true">
+
+            <div ng-if="completed">
+                <p>completed</p>
+            </div>
+
+            <input type="text" placeholder="Add your to do" class="bottomInput"></input>
+           
+            <button class="button">Add</button>
+            </div>
+
+        </div>
+    </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular.min.js"></script>
+        <script src="angularLab1.js"></script>
+        <script src="toDoAppModule.js"></script>
+        <script src="toDoController.js"></script>
+    </body>
+    </html>
