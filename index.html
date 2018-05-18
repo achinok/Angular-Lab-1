@@ -17,30 +17,22 @@
             <input type="text" placeholder="Filter your to dos" class="topInput"></input>
 
             <!--repeated things-->
-            <div ng-controller="SampleToDo as ctrl">
-                <p ng-repeat="ToDoS in ctrl.ToDoList">{{ToDoList.task}} and {{ToDoList.completed}}</p>
-            </div>
-            
-            <!-- <select ng-model="tasks">
-                <option value="make_dinner">make dinner</option>
-                <option value="go_for_a_run">go for a run</option>
-                <option value="bake_a_cake">bake a cake</option>
-                <option value="the_the_mail">get the mail</option> -->
 
-            </select>
-
-            <!--ngClass completed-->
-            <div ng-class="completed">
-                <button class="btn"><i class="fa fa-close"></i></button>
-                <p id="check">completed</p>
+           
+            <div ng-controller="sampleToDo as ctrl">  <!--function called in the controller-->
+                <p ng-repeat="toDoList in ctrl.toDoList">{{toDoList.task}}<input id ="X" type="button" value="X" ng-model="X" ng-init="completed=true"></input><input id ="completePink" type="button" value="Complete" ng-model="Complete" ng-init="completed=true"></input></p>   
             </div>
 
-            <!--ngif delelted-->
-            <input type="checkbox" ng-model="completed" ng-init="completed = true">
+            <!--ng-model binds the value of an input field to a variable created in AngularJS
+            It is uncessary here because we used the repeat function and called a array of information-->
 
-            <div ng-if="completed">
+            <!--ngClass completed-->  
+
+            <div ng-class="completed">                          
+            <input type="checkbox" id= "completeCheck" ng-model="completed" ng-init="completed = true">
+              <div ng-if="completed">
                 <p>completed</p>
-            </div>
+              </div>
 
             <input type="text" placeholder="Add your to do" class="bottomInput"></input>
            
@@ -50,7 +42,6 @@
         </div>
     </div>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular.min.js"></script>
-        <script src="angularLab1.js"></script>
         <script src="toDoAppModule.js"></script>
         <script src="toDoController.js"></script>
     </body>

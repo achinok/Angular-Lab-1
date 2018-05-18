@@ -73,3 +73,18 @@ body {
     background-color: #ff0000;
 }
 
+#X{
+   border-color: none;
+   font-size: 10px;
+   margin-left: 50%;
+   
+}
+#completePink {
+    color:#f857a6;
+    border-color: #f857a6;
+    border-radius: 15px;
+    padding: 10px;
+    display: flex;
+    justify-content: left;
+    align-content: left;
+}

@@ -2,7 +2,6 @@
 
 
 {
-angular
-.module("app")
-.controller("toDoAppModule", toDoAppModule);
-};
+    angular
+    .module("app", []);
+    }

@@ -1,35 +1,36 @@
 "use strict"
 
-    function SampleToDo() {
-        const vm = this;
+    function sampleToDo() {
+        let vm = this;
 
-        let task1 = {
-            task: "make dinner",
+        this.task1 = {
+            task: "1. make dinner",
             completed: false
         }
 
-        let task2 = {
-            task: "go for a run",
+        this.task2 = {
+            task: "2. go for a run",
             completed: true 
         }
 
-        let task3 = {
-            task: "bake a cake",
+        this.task3 = {
+            task: "3. bake a cake",
             completed: true
         }
 
-        let task4 = {
-            task: "get the mail",
+        this.task4 = {
+            task: "4. get the mail",
             completed: false
         }
-
-        vm.toDoList = ["task1", "task2", "task3", "task4"];
+        
+        vm.toDoList = [this.task1, this.task2, this.task3, this.task4];
+                // return toDoList;  if necessary just return the varible name of the funciton not the samepleToDo()
     }
 
-// ngRepeat must be used
+
 
 {
 angular
 .module("app")
-.controller("SampleToDo", SampleToDo);
+.controller("sampleToDo", sampleToDo);
 };
