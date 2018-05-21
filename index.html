@@ -12,27 +12,48 @@
     <div id="box"> 
         <div id="innerbox">
             <h1>TODO List</h1>
+
             <p>A place to store the things you have to do!</p>
 
             <input type="text" placeholder="Filter your to dos" class="topInput"></input>
 
             <!--repeated things-->
 
-           
-            <div ng-controller="sampleToDo as ctrl">  <!--function called in the controller-->
-                <p ng-repeat="toDoList in ctrl.toDoList">{{toDoList.task}}<input id ="X" type="button" value="X" ng-model="X" ng-init="completed=true"></input><input id ="completePink" type="button" value="Complete" ng-model="Complete" ng-init="completed=true"></input></p>   
+           <!-- ng-controller should be around parent that wraps around everything -->
+            <div ng-controller="sampleToDo as ctrl">   <!--function called in the controller-->
+                <!-- sampleToDo stored as ctrl, just made it an object -->
+                <!-- explain this to someone -->
+                
+            <div ng-class="completePink">                          
+                <input id= "completeCheck" ng-model="completePink" ng-init="completepink = true">
+                  <div ng-if="completePink">
+                    <p>completed</p>
+                  </div>
+                    <!-- ($index) grab the current index-->
+                    <!-- completed untrue to start -->
+
+                    
+                <p class="content" ng-repeat="toDoList in ctrl.toDoList">{{toDoList.id}}
+                    <input class ="completePink" type="button" value="Complete" ng-model="Complete" ng-init="completed=true"
+                    >{{toDoList.task}}
+                    <input class ="X" type="button" value="X" ng-model="X" ng-init="completed=true">
+                    </p>   
             </div>
 
             <!--ng-model binds the value of an input field to a variable created in AngularJS
             It is uncessary here because we used the repeat function and called a array of information-->
 
-            <!--ngClass completed-->  
+            <!--ngClass completed--> 
+            
+    
 
-            <div ng-class="completed">                          
-            <input type="checkbox" id= "completeCheck" ng-model="completed" ng-init="completed = true">
-              <div ng-if="completed">
-                <p>completed</p>
-              </div>
+              
+            <!-- <div ng-class="content">                          
+                    <input type="button" id= "completePink" ng-model="completePink" ng-init="completed = true">
+                      <div ng-if="completed">
+                        <p>completed</p>
+                      </div> -->
+
 
             <input type="text" placeholder="Add your to do" class="bottomInput"></input>
            
