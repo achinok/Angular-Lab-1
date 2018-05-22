@@ -91,7 +91,29 @@ body {
     align-content: center;
 }
 
-content {
+/* content {
     display: block;
     justify-content: center;
-}
+} */
+
+.true {
+    color: white;
+    font-weight: bold;
+    background-color: steelblue;
+  }
+
+  ol {
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      justify-content: center;
+      width: 75%;
+
+  }
+
+  .red{
+    background-color: red;
+  }
+  .blue{
+    background-color: blue;
+  }
